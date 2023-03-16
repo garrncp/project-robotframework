@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.10.2 on win32)" generated="20230316 14:00:58.010" rpa="false" schemaversion="2">
+<suite id="s1" name="Search 15" source="C:\Users\natta\Desktop\New\TestCase\Search_15.robot">
+<test id="s1-t1" name="search data Verify Status">
+<kw name="Open Store Accounting Website and go to home page" library="common_feature">
+<arg>${user['username']}</arg>
+<arg>${user['password']}</arg>
+<arg>${module['store_audit']}</arg>
+<arg>${menu['sam_6200']}</arg>
+<doc>Open Store Accounting Website and go to home page</doc>
+<kw name="Open Store Accounting Website" library="common_keywords">
+<doc>Open Store Accounting Website</doc>
+<kw name="Set Library Search Order" library="BuiltIn">
+<arg>SeleniumLibrary</arg>
+<doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
+<status status="PASS" starttime="20230316 14:00:59.036" endtime="20230316 14:00:59.036"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${remoteUrl}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230316 14:00:59.036" level="INFO">Opening browser 'firefox' to base url 'http://sescsmnqa03.cpall.co.th/StoreAcct/common/Login.jsp'.</msg>
+<msg timestamp="20230316 14:00:59.052" level="INFO">Firefox driver log is always forced to to: C:\Users\natta\Desktop\New\TestCase\geckodriver-6.log</msg>
+<status status="PASS" starttime="20230316 14:00:59.036" endtime="20230316 14:01:09.188"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230316 14:01:09.188" endtime="20230316 14:01:09.212"/>
+</kw>
+<status status="PASS" starttime="20230316 14:00:59.036" endtime="20230316 14:01:09.212"/>
+</kw>
+<kw name="Input username" library="login_page">
+<arg>${username}</arg>
+<doc>Input username</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_page.username_field}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:09.220" level="INFO">Typing text 'out-nattananboo' into text field 'xpath=//input[@name="j_username"]'.</msg>
+<status status="PASS" starttime="20230316 14:01:09.212" endtime="20230316 14:01:09.420"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:09.212" endtime="20230316 14:01:09.420"/>
+</kw>
+<kw name="Input password" library="login_page">
+<arg>${password}</arg>
+<doc>Input password</doc>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${login_page.password_field}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:09.428" level="INFO">Typing password into text field 'xpath=//input[@name="j_password"]'.</msg>
+<msg timestamp="20230316 14:01:09.452" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230316 14:01:09.588" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230316 14:01:09.428" endtime="20230316 14:01:09.588"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:09.420" endtime="20230316 14:01:09.588"/>
+</kw>
+<kw name="Click login button" library="login_page">
+<doc>Tap login button</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_page.login_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:09.596" level="INFO">Clicking element 'xpath=//input[@class="RBbutton" and @value="login"]'.</msg>
+<status status="PASS" starttime="20230316 14:01:09.588" endtime="20230316 14:01:10.164"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:09.588" endtime="20230316 14:01:10.164"/>
+</kw>
+<kw name="Select module name" library="login_page">
+<arg>${module}</arg>
+<doc>Select module name</doc>
+<kw name="Replace String" library="String">
+<var>${module_drop_down}</var>
+<arg>${login_page.ddl_module}</arg>
+<arg>{label}</arg>
+<arg>${label}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230316 14:01:10.164" level="INFO">${module_drop_down} = xpath=//select[@name="moduleDD"]/option[@value="SA"]</msg>
+<status status="PASS" starttime="20230316 14:01:10.164" endtime="20230316 14:01:10.164"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${module_drop_down}</arg>
+<arg>5s</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230316 14:01:10.180" level="INFO">Current page contains element 'xpath=//select[@name="moduleDD"]/option[@value="SA"]'.</msg>
+<status status="PASS" starttime="20230316 14:01:10.164" endtime="20230316 14:01:10.180"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${module_drop_down}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:10.180" level="INFO">Clicking element 'xpath=//select[@name="moduleDD"]/option[@value="SA"]'.</msg>
+<status status="PASS" starttime="20230316 14:01:10.180" endtime="20230316 14:01:10.412"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:10.164" endtime="20230316 14:01:10.412"/>
+</kw>
+<kw name="Click submit button" library="login_page">
+<doc>Tap submit button</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_page.submit_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:10.420" level="INFO">Clicking element 'xpath=//input[@class="RBbutton" and @value="submit"]'.</msg>
+<status status="PASS" starttime="20230316 14:01:10.420" endtime="20230316 14:01:11.357"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:10.420" endtime="20230316 14:01:11.357"/>
+</kw>
+<kw name="Click menu" library="menu_page">
+<arg>${menu}</arg>
+<doc>Click menu by locator</doc>
+<kw name="Replace String" library="String">
+<var>${locator}</var>
+<arg>${menu_page.menu_name}</arg>
+<arg>{label}</arg>
+<arg>${menu}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230316 14:01:11.365" level="INFO">${locator} = xpath=//span[contains(text(), 'SAM6200 - หน้าจอค้นหาผลการตรวจนับ (ทีมบัญชี)')]</msg>
+<status status="PASS" starttime="20230316 14:01:11.365" endtime="20230316 14:01:11.365"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:11.365" level="INFO">Clicking element 'xpath=//span[contains(text(), 'SAM6200 - หน้าจอค้นหาผลการตรวจนับ (ทีมบัญชี)')]'.</msg>
+<status status="PASS" starttime="20230316 14:01:11.365" endtime="20230316 14:01:13.196"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:11.357" endtime="20230316 14:01:13.198"/>
+</kw>
+<status status="PASS" starttime="20230316 14:00:59.020" endtime="20230316 14:01:13.200"/>
+</kw>
+<kw name="Clear data infomation field" library="home_feature">
+<doc>Verify table infomation should be correct</doc>
+<kw name="Clear date from text field" library="home_page">
+<doc>Clear date from text field</doc>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${home_page.date_from}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230316 14:01:13.211" endtime="20230316 14:01:13.270"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:13.210" endtime="20230316 14:01:13.272"/>
+</kw>
+<kw name="Clear date to text field" library="home_page">
+<doc>lear date to text field</doc>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${home_page.date_to}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230316 14:01:13.276" endtime="20230316 14:01:13.360"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:13.273" endtime="20230316 14:01:13.361"/>
+</kw>
+<kw name="Verify status correct data can be uncheck" library="home_page">
+<doc>Verify status correct data can be uncheck</doc>
+<kw name="Unselect checkbox and verify checkbox is unchecked" library="common_keywords">
+<arg>${home_page.sts_correct_data}</arg>
+<doc>Unselect checkbox and verify checkbox is unselect</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_not_select}</var>
+<arg>SeleniumLibrary.Checkbox Should not Be Selected</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Checkbox Should Not Be Selected" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<msg timestamp="20230316 14:01:13.370" level="INFO">Verifying checkbox 'id=form1:checkbox2' is not selected.</msg>
+<msg timestamp="20230316 14:01:13.630" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-30.png"&gt;&lt;img src="selenium-screenshot-30.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230316 14:01:13.637" level="FAIL">Checkbox 'id=form1:checkbox2' should not have been selected.</msg>
+<status status="FAIL" starttime="20230316 14:01:13.368" endtime="20230316 14:01:13.637"/>
+</kw>
+<msg timestamp="20230316 14:01:13.638" level="INFO">${is_not_select} = False</msg>
+<status status="PASS" starttime="20230316 14:01:13.366" endtime="20230316 14:01:13.638"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_not_select} == ${FALSE}">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:13.641" level="INFO">Clicking element 'id=form1:checkbox2'.</msg>
+<status status="PASS" starttime="20230316 14:01:13.640" endtime="20230316 14:01:13.873"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:13.639" endtime="20230316 14:01:13.873"/>
+</branch>
+<status status="PASS" starttime="20230316 14:01:13.639" endtime="20230316 14:01:13.874"/>
+</if>
+<status status="PASS" starttime="20230316 14:01:13.364" endtime="20230316 14:01:13.874"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:13.362" endtime="20230316 14:01:13.874"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:13.209" endtime="20230316 14:01:13.874"/>
+</kw>
+<kw name="Input date from" library="home_page">
+<arg>${tc_01['date_from']}</arg>
+<doc>Input date from</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${home_page.date_from}</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:13.880" level="INFO">Typing text '011263' into text field 'id=form1:dateFrom'.</msg>
+<status status="PASS" starttime="20230316 14:01:13.880" endtime="20230316 14:01:13.926"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:13.876" endtime="20230316 14:01:13.926"/>
+</kw>
+<kw name="Input date to" library="home_page">
+<arg>${tc_02['date_to']}</arg>
+<doc>Input date to</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${home_page.date_to}</arg>
+<arg>${date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:13.935" level="INFO">Typing text '021263' into text field 'id=form1:dateTo'.</msg>
+<status status="PASS" starttime="20230316 14:01:13.934" endtime="20230316 14:01:13.991"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:13.928" endtime="20230316 14:01:13.991"/>
+</kw>
+<kw name="Select check all status and verify" library="home_feature">
+<doc>Select check all status and verify</doc>
+<kw name="Verify status import can be check" library="home_page">
+<doc>Verify status import can be check</doc>
+<kw name="Select checkbox and verify checkbox is checked" library="common_keywords">
+<arg>${home_page.sts_import}</arg>
+<doc>Select checkbox and verify checkbox is checked</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_select}</var>
+<arg>SeleniumLibrary.Checkbox Should Be Selected</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20230316 14:01:14.002" level="INFO">Verifying checkbox 'id=form1:checkbox0' is selected.</msg>
+<msg timestamp="20230316 14:01:14.186" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-31.png"&gt;&lt;img src="selenium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230316 14:01:14.187" level="FAIL">Checkbox 'id=form1:checkbox0' should have been selected but was not.</msg>
+<status status="FAIL" starttime="20230316 14:01:14.001" endtime="20230316 14:01:14.187"/>
+</kw>
+<msg timestamp="20230316 14:01:14.188" level="INFO">${is_select} = False</msg>
+<status status="PASS" starttime="20230316 14:01:13.998" endtime="20230316 14:01:14.188"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_select} == ${FALSE}">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:14.190" level="INFO">Clicking element 'id=form1:checkbox0'.</msg>
+<status status="PASS" starttime="20230316 14:01:14.189" endtime="20230316 14:01:14.457"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:14.189" endtime="20230316 14:01:14.457"/>
+</branch>
+<status status="PASS" starttime="20230316 14:01:14.188" endtime="20230316 14:01:14.457"/>
+</if>
+<status status="PASS" starttime="20230316 14:01:13.996" endtime="20230316 14:01:14.458"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:13.994" endtime="20230316 14:01:14.458"/>
+</kw>
+<kw name="Verify status Invalid data can be check" library="home_page">
+<doc>Verify status Invalid data can be check</doc>
+<kw name="Select checkbox and verify checkbox is checked" library="common_keywords">
+<arg>${home_page.sts_Invalid_data}</arg>
+<doc>Select checkbox and verify checkbox is checked</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_select}</var>
+<arg>SeleniumLibrary.Checkbox Should Be Selected</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20230316 14:01:14.461" level="INFO">Verifying checkbox 'id=form1:checkbox1' is selected.</msg>
+<msg timestamp="20230316 14:01:14.635" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-32.png"&gt;&lt;img src="selenium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230316 14:01:14.636" level="FAIL">Checkbox 'id=form1:checkbox1' should have been selected but was not.</msg>
+<status status="FAIL" starttime="20230316 14:01:14.460" endtime="20230316 14:01:14.636"/>
+</kw>
+<msg timestamp="20230316 14:01:14.636" level="INFO">${is_select} = False</msg>
+<status status="PASS" starttime="20230316 14:01:14.460" endtime="20230316 14:01:14.636"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_select} == ${FALSE}">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:14.638" level="INFO">Clicking element 'id=form1:checkbox1'.</msg>
+<status status="PASS" starttime="20230316 14:01:14.638" endtime="20230316 14:01:14.860"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:14.637" endtime="20230316 14:01:14.860"/>
+</branch>
+<status status="PASS" starttime="20230316 14:01:14.637" endtime="20230316 14:01:14.860"/>
+</if>
+<status status="PASS" starttime="20230316 14:01:14.459" endtime="20230316 14:01:14.861"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:14.458" endtime="20230316 14:01:14.863"/>
+</kw>
+<kw name="Verify status correct data can be check" library="home_page">
+<doc>Verify status correct data can be check</doc>
+<kw name="Select checkbox and verify checkbox is checked" library="common_keywords">
+<arg>${home_page.sts_correct_data}</arg>
+<doc>Select checkbox and verify checkbox is checked</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_select}</var>
+<arg>SeleniumLibrary.Checkbox Should Be Selected</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20230316 14:01:14.867" level="INFO">Verifying checkbox 'id=form1:checkbox2' is selected.</msg>
+<msg timestamp="20230316 14:01:15.103" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230316 14:01:15.104" level="FAIL">Checkbox 'id=form1:checkbox2' should have been selected but was not.</msg>
+<status status="FAIL" starttime="20230316 14:01:14.867" endtime="20230316 14:01:15.104"/>
+</kw>
+<msg timestamp="20230316 14:01:15.105" level="INFO">${is_select} = False</msg>
+<status status="PASS" starttime="20230316 14:01:14.866" endtime="20230316 14:01:15.105"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_select} == ${FALSE}">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:15.106" level="INFO">Clicking element 'id=form1:checkbox2'.</msg>
+<status status="PASS" starttime="20230316 14:01:15.106" endtime="20230316 14:01:15.327"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:15.105" endtime="20230316 14:01:15.327"/>
+</branch>
+<status status="PASS" starttime="20230316 14:01:15.105" endtime="20230316 14:01:15.328"/>
+</if>
+<status status="PASS" starttime="20230316 14:01:14.865" endtime="20230316 14:01:15.328"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:14.864" endtime="20230316 14:01:15.329"/>
+</kw>
+<kw name="Verify status audit accountant can be check" library="home_page">
+<doc>Verify status audit accountant can be check</doc>
+<kw name="Select checkbox and verify checkbox is checked" library="common_keywords">
+<arg>${home_page.sts_audit_accountant}</arg>
+<doc>Select checkbox and verify checkbox is checked</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_select}</var>
+<arg>SeleniumLibrary.Checkbox Should Be Selected</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20230316 14:01:15.334" level="INFO">Verifying checkbox 'id=form1:checkbox3' is selected.</msg>
+<msg timestamp="20230316 14:01:15.520" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-34.png"&gt;&lt;img src="selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230316 14:01:15.521" level="FAIL">Checkbox 'id=form1:checkbox3' should have been selected but was not.</msg>
+<status status="FAIL" starttime="20230316 14:01:15.333" endtime="20230316 14:01:15.521"/>
+</kw>
+<msg timestamp="20230316 14:01:15.521" level="INFO">${is_select} = False</msg>
+<status status="PASS" starttime="20230316 14:01:15.332" endtime="20230316 14:01:15.521"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_select} == ${FALSE}">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:15.523" level="INFO">Clicking element 'id=form1:checkbox3'.</msg>
+<status status="PASS" starttime="20230316 14:01:15.522" endtime="20230316 14:01:15.744"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:15.522" endtime="20230316 14:01:15.744"/>
+</branch>
+<status status="PASS" starttime="20230316 14:01:15.522" endtime="20230316 14:01:15.745"/>
+</if>
+<status status="PASS" starttime="20230316 14:01:15.331" endtime="20230316 14:01:15.745"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:15.329" endtime="20230316 14:01:15.747"/>
+</kw>
+<kw name="Verify status confirm datat can be check" library="home_page">
+<doc>Verify status confirm datat can be check</doc>
+<kw name="Select checkbox and verify checkbox is checked" library="common_keywords">
+<arg>${home_page.sts_confirm_data}</arg>
+<doc>Select checkbox and verify checkbox is checked</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_select}</var>
+<arg>SeleniumLibrary.Checkbox Should Be Selected</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20230316 14:01:15.751" level="INFO">Verifying checkbox 'id=form1:checkbox4' is selected.</msg>
+<msg timestamp="20230316 14:01:15.958" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230316 14:01:15.960" level="FAIL">Checkbox 'id=form1:checkbox4' should have been selected but was not.</msg>
+<status status="FAIL" starttime="20230316 14:01:15.750" endtime="20230316 14:01:15.960"/>
+</kw>
+<msg timestamp="20230316 14:01:15.961" level="INFO">${is_select} = False</msg>
+<status status="PASS" starttime="20230316 14:01:15.749" endtime="20230316 14:01:15.961"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_select} == ${FALSE}">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:15.965" level="INFO">Clicking element 'id=form1:checkbox4'.</msg>
+<status status="PASS" starttime="20230316 14:01:15.964" endtime="20230316 14:01:16.187"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:15.963" endtime="20230316 14:01:16.188"/>
+</branch>
+<status status="PASS" starttime="20230316 14:01:15.961" endtime="20230316 14:01:16.188"/>
+</if>
+<status status="PASS" starttime="20230316 14:01:15.748" endtime="20230316 14:01:16.189"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:15.747" endtime="20230316 14:01:16.189"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:13.992" endtime="20230316 14:01:16.190"/>
+</kw>
+<kw name="Verify counting normal can be check" library="home_page">
+<doc>Verify counting normal can be check</doc>
+<kw name="Select checkbox and verify checkbox is checked" library="common_keywords">
+<arg>${home_page.count_normal}</arg>
+<doc>Select checkbox and verify checkbox is checked</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_select}</var>
+<arg>SeleniumLibrary.Checkbox Should Be Selected</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20230316 14:01:16.197" level="INFO">Verifying checkbox 'id=form1:checkbox9' is selected.</msg>
+<msg timestamp="20230316 14:01:16.388" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-36.png"&gt;&lt;img src="selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230316 14:01:16.389" level="FAIL">Checkbox 'id=form1:checkbox9' should have been selected but was not.</msg>
+<status status="FAIL" starttime="20230316 14:01:16.196" endtime="20230316 14:01:16.389"/>
+</kw>
+<msg timestamp="20230316 14:01:16.390" level="INFO">${is_select} = False</msg>
+<status status="PASS" starttime="20230316 14:01:16.195" endtime="20230316 14:01:16.390"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_select} == ${FALSE}">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:16.391" level="INFO">Clicking element 'id=form1:checkbox9'.</msg>
+<status status="PASS" starttime="20230316 14:01:16.391" endtime="20230316 14:01:16.613"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:16.390" endtime="20230316 14:01:16.614"/>
+</branch>
+<status status="PASS" starttime="20230316 14:01:16.390" endtime="20230316 14:01:16.614"/>
+</if>
+<status status="PASS" starttime="20230316 14:01:16.193" endtime="20230316 14:01:16.615"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:16.191" endtime="20230316 14:01:16.615"/>
+</kw>
+<kw name="Click search button" library="home_page">
+<doc>Click search button</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${home_page.btn_search}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230316 14:01:16.620" level="INFO">Clicking element 'id=form1:search'.</msg>
+<status status="PASS" starttime="20230316 14:01:16.619" endtime="20230316 14:01:17.392"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:16.617" endtime="20230316 14:01:17.393"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230316 14:01:20.424" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230316 14:01:17.420" endtime="20230316 14:01:20.424"/>
+</kw>
+<kw name="Close Store Accounting Website" library="common_keywords" type="TEARDOWN">
+<doc>Close Store Accounting Website</doc>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230316 14:01:20.424" endtime="20230316 14:01:22.428"/>
+</kw>
+<status status="PASS" starttime="20230316 14:01:20.424" endtime="20230316 14:01:22.428"/>
+</kw>
+<doc>search data Verify Status</doc>
+<tag>search_data</tag>
+<status status="PASS" starttime="20230316 14:00:59.020" endtime="20230316 14:01:22.428"/>
+</test>
+<status status="PASS" starttime="20230316 14:00:58.010" endtime="20230316 14:01:22.428"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">search_data</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Search 15">Search 15</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
